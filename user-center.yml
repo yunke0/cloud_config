@@ -48,7 +48,7 @@ mybatis:
 security:
   oauth2:
     resource:
-      user-info-uri: http://local.gateway.com:8080/api-o/user-me
+      user-info-uri: http://local.gateway.com:8082/api-o/user-me
       prefer-token-info: false
 wechat:
   domain: http://api.gateway.com:8082/api-u
