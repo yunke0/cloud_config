@@ -19,6 +19,10 @@ spring:
     username: guest
     password: guest
     virtual-host: /
+  servlet: 
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
   mail:
     default-encoding: UTF-8
     host: smtp.163.com
@@ -28,6 +32,17 @@ spring:
     test-connection: false
 #    properties:
 #      mail.smtp.auth: true
+  redis:
+    host: local.redis.com
+    port: 6379
+    password:
+    timeout: 10s
+    lettuce:
+      pool:
+        min-idle: 0
+        max-idle: 8
+        max-active: 8
+        max-wait: -1ms
   mvc:
     servlet:
       load-on-startup: 1
@@ -48,3 +63,33 @@ security:
     resource:
       user-info-uri: http://local.gateway.com:8080/api-o/user-me
       prefer-token-info: false
+file:
+  local:
+    path: d:/localFile
+    prefix: /statics
+    urlPrefix: http://api.gateway.com:8080/api-f${file.local.prefix}
+  aliyun:
+    endpoint: xxx
+    accessKeyId: xxx
+    accessKeySecret: xxx
+    bucketName: xxx
+    domain: https://xxx
+wechat:
+  domain: http://api.gateway.com:8080/api-u
+  infos:
+    app1:
+      appid: xxx
+      secret: xxx
+    app2:
+      appid: xxx
+      secret: xxx
+ribbon:
+  ReadTimeout: 10000
+  ConnectTimeout: 10000
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000
