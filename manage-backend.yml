@@ -54,7 +54,7 @@ spring:
     sender:
       type: web
 mybatis:
-  type-aliases-package: com.cloud.backend.model,com.cloud.model.user
+  type-aliases-package: com.cloud.backend.model,com.cloud.model.user,com.cloud.model.mail
   mapper-locations: classpath:/mybatis-mappers/*
   configuration:
     mapUnderscoreToCamelCase: true
